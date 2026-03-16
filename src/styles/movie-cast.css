@@ -1,0 +1,150 @@
+.movie-cast {
+
+    position: relative;
+    margin-top: var(--spacing-2);
+    margin-bottom: var(--spacing-10);
+}
+
+.movie-cast::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cast-row-container {
+    position: relative;
+}
+
+.cast-row-container .scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: var(--text-2xl);
+    padding: 1rem;
+    cursor: pointer;
+    opacity: 0.6; 
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cast-row-container .scroll-arrow-left {
+    left: 0;
+    background: linear-gradient(to right, var(--surface-dark), transparent);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.cast-row-container .scroll-arrow-right {
+    right: 0;
+    background: linear-gradient(to left, var(--surface-dark), transparent);
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.cast-row-container:hover .scroll-arrow {
+    opacity: 1;
+}
+
+.cast-row-container .scroll-arrow:hover {
+    backdrop-filter: var(--blur-sm) saturate(112%);
+    -webkit-backdrop-filter: var(--blur-sm) saturate(112%);
+    background-color: var(--surface-dark);
+}
+
+.cast-row-scroll {
+    display: flex;
+    gap: var(--spacing-2);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 0 var(--spacing-2);
+    scrollbar-width: none;
+}
+
+.cast-row-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.actor-card {
+    flex: 0 0 auto;
+    width: var(--actor-card-width-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    transition: var(--transition);
+}
+
+.actor-card:hover {
+    transform: translateY(-4px);
+}
+
+.actor-image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+}
+
+.actor-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2/3;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+    box-shadow: 0 var(--spacing-1) var(--spacing-1) var(--shadow-dark);
+    display: block;
+}
+
+.actor-info {
+    text-align: center;
+}
+
+.actor-name {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semi);
+    margin: 0;
+    color: var(--text-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.actor-character {
+    font-size: var(--text-xs);
+    color: var(--text-dim);
+    margin: 0.25rem 0 0 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+    .actor-card {
+        width: var(--actor-card-width-lg);
+    }
+
+    .actor-name {
+        font-size: var(--text-base);
+    }
+    
+    .cast-row-container .scroll-arrow-left {
+        padding-left: 0.5rem;
+        padding-right: 2rem;
+    }
+
+    .cast-row-container .scroll-arrow-right {
+        padding-left: 0.5rem;
+        padding-right: 2rem;
+    }
+}

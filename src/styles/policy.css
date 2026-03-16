@@ -1,0 +1,57 @@
+/* 
+   Styles for Privacy Policy and Terms of Service 
+*/
+.policy-page {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: var(--page-top-padding) 2rem 4rem 2rem;
+    animation: fadeIn 0.4s ease;
+    min-height: calc(100vh - 300px);
+    position: relative;
+    overflow: hidden;
+}
+
+.policy-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.policy-title {
+    font-size: var(--text-3xl);
+    font-weight: var(--weight-bold);
+    color: var(--text-color);
+    letter-spacing: 0.125rem;
+    margin-bottom: var(--spacing-4);
+    text-transform: uppercase;
+}
+
+.policy-section-title {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semi);
+    color: var(--text-color);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.75rem;
+    display: inline-block;
+}
+
+.policy-text {
+    font-size: var(--text-base);
+    color: var(--text-bright);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 60rem;
+}
+
+.policy-date {
+    font-size: var(--text-base);
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 2rem;
+}

@@ -1,0 +1,90 @@
+.genre-row {
+    position: relative;
+    margin-top: var(--spacing-2);
+    margin-bottom: var(--spacing-10);
+}
+
+.genre-row::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(to right, var(--background-color) 0%, transparent 5%, transparent 95%, var(--background-color) 100%);
+}
+
+.movie-row-container {
+    position: relative;
+}
+
+.scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: var(--text-2xl);
+    padding: 1rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-arrow-left {
+    left: 0;
+    background: linear-gradient(to right, var(--surface-dark), transparent);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.scroll-arrow-right {
+    right: 0;
+    background: linear-gradient(to left, var(--surface-dark), transparent);
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.movie-row-container:hover .scroll-arrow {
+    opacity: 1;
+}
+
+.scroll-arrow:hover {
+    backdrop-filter: var(--blur-sm) saturate(112%);
+    -webkit-backdrop-filter: var(--blur-sm) saturate(112%);
+    background-color: var(--surface-dark);
+}
+
+.movie-row-scroll {
+    display: flex;
+    gap: var(--spacing-2);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 0 var(--spacing-2);
+    scrollbar-width: none;
+}
+
+.movie-row-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .scroll-arrow-left {
+        padding-left: 0.5rem;
+        padding-right: 2rem;
+    }
+
+    .scroll-arrow-right {
+        padding-left: 0.5rem;
+        padding-right: 2rem;
+    }
+}
